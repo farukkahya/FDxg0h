@@ -4,15 +4,17 @@ import Logo from '@/images/Logo.png'
 import { Manrope } from 'next/font/google'
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { loginAction, registerAction } from "@/redux/actions/auth";
 
 const manrope = Manrope({ subsets: ['latin'] })
 
 const Login = () => {
   const [signUp, setSignUp] = useState(true);
   const [authData, setAuthData] = useState({
-    username: "",
+    name: "",
     email: "",
     password: "",
+    rememberMe:false,
   });
   const dispatch = useDispatch();
   const handleChange = (e) => {
@@ -39,19 +41,19 @@ const Login = () => {
         {signUp && (
           <div className="flex flex-col mt-12 mx-auto">
             <label className="text-auth-blue font-bold mb-2" htmlFor="name">Name</label>
-            <input className="w-400 h-14 p-4 text-auth-blue opacity-60 border-none" placeholder="John Doe" type="text" name="name" />
+            <input onChange={handleChange} value={authData.name} className="w-400 h-14 p-4 text-auth-blue opacity-60 border-none" placeholder="John Doe" type="text" name="name" />
           </div>
         )}
         <div className={`flex flex-col ${signUp ? "mt-8" : "mt-20"} mx-auto`}>
           <label className="text-auth-blue font-bold mb-2" htmlFor="email">E-mail</label>
-          <input className="w-400 h-14 p-4 text-auth-blue opacity-60 border-none" placeholder="john@mail.com" type="email" name="email" />
+          <input onChange={handleChange} value={authData.email} className="w-400 h-14 p-4 text-auth-blue opacity-60 border-none" placeholder="john@mail.com" type="email" name="email" />
         </div>
         <div className="flex flex-col mt-8 mx-auto">
           <label className="text-auth-blue font-bold mb-2" htmlFor="password" >Password</label>
-          <input className="w-400 h-14 p-4 text-auth-blue opacity-60 border-none" placeholder="*******" type="password" name="password" />
-          {signUp && (
+          <input onChange={handleChange} value={authData.password} className="w-400 h-14 p-4 text-auth-blue opacity-60 border-none" placeholder="*******" type="password" name="password" />
+          {!signUp && (
             <div className="flex items-center mt-3">
-              <input className="text-auth-indigo w-4 h-4 mr-2" type="checkbox" name="rememberMe" />
+              <input onChange={handleChange} checked="" className="text-auth-indigo w-4 h-4 mr-2" type="checkbox" name="rememberMe" />
               <label className="text-auth-indigo text-xs" htmlFor="rememberMe">Remember Me</label>
             </div>
           )}
