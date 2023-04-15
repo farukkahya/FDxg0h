@@ -48,7 +48,7 @@ const Login = () => {
         </div>
         <div className="flex flex-col mt-8 mx-auto">
           <label className="text-auth-blue font-bold mb-2" htmlFor="password" >Password</label>
-          <input className="w-400 h-14 p-4 text-auth-blue opacity-60 border-none" placeholder="*******" type="email" name="password" />
+          <input className="w-400 h-14 p-4 text-auth-blue opacity-60 border-none" placeholder="*******" type="password" name="password" />
           {signUp && (
             <div className="flex items-center mt-3">
               <input className="text-auth-indigo w-4 h-4 mr-2" type="checkbox" name="rememberMe" />
