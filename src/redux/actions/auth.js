@@ -6,7 +6,7 @@ export const registerAction = (authData) => async (dispatch) => {
       body: JSON.stringify(authData)
     })
     dispatch({ type: "REGISTER", payload: data })
-    window.location = "/"
+    window.location = "/auth"
   } catch (error) {
     return error
   }
