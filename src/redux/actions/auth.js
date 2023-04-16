@@ -6,7 +6,8 @@ export const registerAction = (authData) => async (dispatch) => {
       body: JSON.stringify(authData)
     })
     dispatch({ type: "REGISTER", payload: data })
-    window.location = "/auth"
+    localStorage.setItem('isLoggedIn', "true")
+    window.location = "/"
   } catch (error) {
     return error
   }
@@ -18,6 +19,7 @@ export const loginAction = (authData) => async (dispatch) => {
       body: JSON.stringify(authData)
     })
     dispatch({ type: "LOGIN", payload: data })
+    localStorage.setItem('isLoggedIn', "true")
     window.location = "/"
   } catch (error) {
     return console.log(error)
