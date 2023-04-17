@@ -5,9 +5,9 @@ import React from 'react'
 
 const Banner = () => {
   return (
-    <div>
-      <Image className='mt-10' src={BannerImage}/>
-      <Image className="relative z-10 -top-72 left-16" src={BannerText}/>
+    <div className='mt-10 h-96'>
+      <Image alt='banner' src={BannerImage}/>
+      <Image alt='bannerText' className="relative z-10 -top-72 left-16" src={BannerText}/>
     </div>
   )
 }

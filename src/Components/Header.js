@@ -4,22 +4,22 @@ import { MagnifyingGlassIcon, UserIcon, HeartIcon, ShoppingCartIcon } from '@her
 
 const Header = () => {
   return (
-    <header className='bg-white w-full flex flex-row justify-between items-center py-11 absolute top-0 left-0 shadow-md'>
-      <div className="ml-14" id="logo">
+    <header className='bg-white w-full flex flex-row h-max justify-between shadow-md px-64 py-6'>
+      <div className="ml-14 h-10" id="logo">
         <Image width={60} height={36} src={Logo} alt="logo" />
       </div>
-      <div className='' id="searchBar">
-        <input className='w-800 h-12 rounded text-auth-blue opacity-40 px-10 absolute left-64 top-9 mt-2' type="text" placeholder="Search" />
-        <MagnifyingGlassIcon width={20} height={20} className='text-auth-blue opacity-40 absolute top-14 left-64 ml-4 pt-1' />
+      <div className='h-12' id="searchBar">
+        <input className='w-800 h-max rounded text-auth-blue opacity-40 py-3 px-10  ' type="text" placeholder="Search" />
+        <MagnifyingGlassIcon width={20} height={20} className='text-auth-blue opacity-40 relative -top-9 mt-1 ml-4' />
       </div>
       <div className='flex mr-20' id="icons">
-        <div className='w-10 mt-3 h-8'>
+        <div className='mr-3 h-8'>
           <UserIcon className='text-auth-blue' width={24} height={28} />
         </div>
-        <div className='w-10 mt-3 h-8'>
+        <div className='mr-3 h-8'>
           <HeartIcon className='text-auth-blue' width={24} height={28} />
         </div>
-        <div className='w-10 mt-3 h-8'>
+        <div className='mr-3 h-8'>
           <ShoppingCartIcon className='text-auth-blue' width={24} height={28} />
         </div>
       </div>
