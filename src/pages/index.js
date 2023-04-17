@@ -15,12 +15,6 @@ export default function Home() {
   const {booksData} = useSelector(state => state.booksData)
   console.log(booksData)
   ////////////////////////////////////////////////////
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn")
-    if (!isLoggedIn) {
-      window.location = "/auth"
-    }
-  })
 
   return (
     <main className={`${manrope.className} h-screen bg-white`}>
